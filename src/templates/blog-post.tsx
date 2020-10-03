@@ -1,14 +1,18 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link, graphql, PageProps } from "gatsby";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-const BlogPostTemplate = ({ data, pageContext, location }) => {
+const BlogPostTemplate: React.FC<PageProps<any>> = ({
+  data,
+  pageContext,
+  location,
+}) => {
   const post = data.markdownRemark;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const { previous, next } = pageContext;
+  const { previous, next } = pageContext as any;
 
   return (
     <Layout location={location} title={siteTitle}>
