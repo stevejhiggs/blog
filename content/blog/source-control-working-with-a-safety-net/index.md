@@ -242,18 +242,9 @@ Download and install tortoise svn at:
 TortoiseSVN integrates with windows at the explorer level and just shows some extra menus. Here is an example of a folder under source control with
 TortoiseSvn installed:
 
-[![](http://pragmaticprogramming.files.wordpress.com/2010/08/sourcecontrol.gif)](http://pragmaticprogramming.files.wordpress.com/2010/08/sourcecontrol.gif)
-
 The green tick means that it is under source control and that there have been no changes to the local files. If you do change a file the overlayed icon will become a red exclamation mark:
 
-[![](http://pragmaticprogramming.files.wordpress.com/2010/08/sourcecontrolchan
-ged.gif)](http://pragmaticprogramming.files.wordpress.com/2010/08/sourcecontro
-lchanged.gif)
-
 If we right-click a directory that is under source control then we get some extra entries in the windows explorer context menu:
-
-[![](http://pragmaticprogramming.files.wordpress.com/2010/08/tortoise1.gif)](h
-ttp://pragmaticprogramming.files.wordpress.com/2010/08/tortoise1.gif)
 
 On a day to day basis we will be most interested in the following operations:
 
