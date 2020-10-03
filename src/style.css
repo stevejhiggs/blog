@@ -39,7 +39,7 @@
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
   --fontWeight-extrabold: 800;
-  --fontWeight-black: 900;
+  --fontWeight-black: 600;
   --fontSize-root: 16px;
   --lineHeight-none: 1;
   --lineHeight-tight: 1.1;
@@ -113,7 +113,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: var(--fontWeight-bold);
+  font-weight: var(--fontWeight-semibold);
   color: var(--color-heading);
 }
 
@@ -313,6 +313,11 @@ a:focus {
 
 .blog-post-nav ul {
   margin: var(--spacing-0);
+}
+
+article.blog-post ul,
+article.blog-post ol {
+  margin-left: var(--spacing-8);
 }
 
 .gatsby-highlight {
