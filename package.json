@@ -47,7 +47,7 @@
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_HOT_LOADER=fast-refresh gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\" --ignore-path .gitignore",
     "start": "npm run develop",
     "serve": "gatsby serve",
