@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Shiggs at work`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Steve Higgs`,
+      summary: `an old cranky dev`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
+    description: `An irregularly updated tech blog`,
+    siteUrl: `https://shiggsatwork.co.uk`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `shiggsatwork`,
     },
   },
   plugins: [
