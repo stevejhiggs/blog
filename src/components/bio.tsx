@@ -35,33 +35,27 @@ const Bio = () => {
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author;
-  const social = data.site.siteMetadata?.social;
 
   const avatar = data?.avatar?.childImageSharp?.fixed;
 
   return (
     <div className="bio">
-      {avatar && (
-        <Image
-          fixed={avatar}
-          alt={author?.name || ``}
-          className="bio-avatar"
-          imgStyle={{
-            borderRadius: `50%`,
-          }}
-        />
-      )}
-      {author?.name && (
-        <p>
-          Written by
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            <strong>{author.name}</strong>
-          </a>
-          {` `}
-          {author?.summary || null}
-        </p>
-      )}
+      <Image
+        fixed={avatar}
+        alt={author?.name || ``}
+        className="bio-avatar"
+        imgStyle={{
+          borderRadius: `50%`,
+        }}
+      />
+
+      <p>
+        <strong>Steve</strong> writes software for a living and for fun.
+        <br />
+        <a href="https://github.com/shiggsatwork">github</a>
+        <span> | </span>
+        <a href="https://twitter.com/shiggsatwork">twitter</a>
+      </p>
     </div>
   );
 };
