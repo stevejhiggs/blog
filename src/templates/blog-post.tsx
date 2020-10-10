@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql, PageProps } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
@@ -10,7 +11,7 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
   pageContext,
   location,
 }) => {
-  const post = data.markdownRemark;
+  const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const { previous, next } = pageContext as any;
 
@@ -29,10 +30,9 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
         </header>
-        <section
-          dangerouslySetInnerHTML={{ __html: post.html }}
-          itemProp="articleBody"
-        />
+        <section itemProp="articleBody">
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </section>
         <hr />
         <footer>
           <Bio />
@@ -77,10 +77,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
