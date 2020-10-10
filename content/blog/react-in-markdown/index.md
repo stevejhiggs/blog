@@ -1,0 +1,27 @@
+---
+title: "React in markdown"
+date: "2020-10-10T22:12:03.284Z"
+description: "Getting react running in markdown didn't prove too hard"
+---
+
+import Counter from '../../../src/components/counter'
+
+I wanted to have the ability to inject react into markdown for this blog. Luckily gatsby has a plugin called MDX that allows just this. You can see the changes needed [here](https://github.com/stevejhiggs/blog/commit/f538cb0b86f357192580ee42bc7bdddada87a741).
+
+And just to prove it:
+
+<Counter />
+
+## Including a component
+
+All this requires is for you to import the component in the markdown file in the same way you would in a js file. Then call the the component as normal:
+
+```jsx
+import Counter from "../../../src/components/counter";
+
+blah blah random markdown
+
+<Counter/>
+
+More random markdown
+```
