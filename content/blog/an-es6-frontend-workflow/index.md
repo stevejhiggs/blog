@@ -6,7 +6,7 @@ description: ""
 
 I'm working on a project that requires a quite substantial amount of frontend javascript work. As part of this I wanted to use the next version of javascript (es6) to undo some of the general javascript craziness and give me more options for structuring the app.
 
-For a list of some of the features in es6 see [http://http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175](http://http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175)
+For a list of some of the features in es6 see [here](http://http://code.tutsplus.com/tutorials/eight-cool-features-coming-in-es6--net-33175)
 
 # es6 in current jscript
 
@@ -20,18 +20,21 @@ To allow me to use modules in current javascript I'm using [browserify](http://b
 
 Under browserify a file of javascript does not export anything usable by default. So, given a file called foo.js that contained the following:
 
-    function sayHello()
-    {
-    	return 'Hello';
-    }
+```js
+function sayHello() {
+  return "Hello";
+}
 
-    module.exports = sayHello;
+module.exports = sayHello;
+```
 
 I could reference the file in bar.js:
 
-    var hello = require('./foo');
+```js
+var hello = require("./foo");
 
-    console.log(hello());
+console.log(hello());
+```
 
 and the console would get 'hello' printed to it. Anything I do not explicitly export from foo.js would not be accessible to bar.js.
 
@@ -40,18 +43,21 @@ es6 modules are actually quite similar to the common Js standard used above, the
 
 foo.js:
 
-    function sayHello()
-    {
-    	return 'Hello';
-    }
+```js
+function sayHello() {
+  return "Hello";
+}
 
-    export {sayHello};
+export { sayHello };
+```
 
 bar.js:
 
-    import { sayHello } from './foo';
+```js
+import { sayHello } from "./foo";
 
-    console.log(sayHello());
+console.log(sayHello());
+```
 
 Note: googling around for the es6 module syntax will give you lots of different structures, the spec has changed a lot but this is what seems to work right now.
 
@@ -76,53 +82,57 @@ Go follow the instructions [on the gulp website](https://github.com/gulpjs/gulp/
 
 also make sure you have ran
 
-    npm init
+`npm init`
 
 in the root of your project so that you have a project.json.
 
 Use the following command in the root of your project to tell npm to fetch all the npm modules we will need:
 
-    npm install browserify es6ify vinyl-source-stream
+`npm install browserify es6ify vinyl-source-stream`
 
 Note: you may be tempted to use the gulp-browserify plugin, don't, it hides features we need and even the gulp devs say it shouldn't be used (I wasted ages trying to figure out what was wrong thanks to this).
 
 Then we need to setup our gulpfile:
 
-    var gulp = require('gulp');
-    var browserify = require('browserify');
-    var es6ify = require('es6ify');
-    var source = require('vinyl-source-stream');
+```js
+var gulp = require("gulp");
+var browserify = require("browserify");
+var es6ify = require("es6ify");
+var source = require("vinyl-source-stream");
 
-    var paths = {
-    	//all js files
+var paths = {
+  //all js files
 
-scripts: ['./src/js/**/*.js', '!./src/js/build/**/*.js'],
-//entry point for browserify
-browserify: './src/js/main.js',
-//output folder
-bundleFolder: 'src/js/build/',
-//output file name
-bundleName: 'bundle.js'
+  scripts: ["./src/js/**/*.js", "!./src/js/build/**/*.js"],
+  //entry point for browserify
+  browserify: "./src/js/main.js",
+  //output folder
+  bundleFolder: "src/js/build/",
+  //output file name
+  bundleName: "bundle.js",
 };
 
-    gulp.task('browserify', function() {
-        return browserify({ debug: true })
-    		//try to transform all files except node modules from es6 to es5
-          .add(es6ify.runtime)
-          .require(require.resolve(paths.browserify), { entry: true })
-          .transform(es6ify.configure(/^(?!.*node_modules)+.+\.js$/))
-    		//bundle the result together
-          .bundle()
-    		//output file name
-          .pipe(source(paths.bundleName))
-    		//output file location
-          .pipe(gulp.dest(paths.bundleFolder));
-    });
+gulp.task("browserify", function () {
+  return (
+    browserify({ debug: true })
+      //try to transform all files except node modules from es6 to es5
+      .add(es6ify.runtime)
+      .require(require.resolve(paths.browserify), { entry: true })
+      .transform(es6ify.configure(/^(?!.*node_modules)+.+\.js$/))
+      //bundle the result together
+      .bundle()
+      //output file name
+      .pipe(source(paths.bundleName))
+      //output file location
+      .pipe(gulp.dest(paths.bundleFolder))
+  );
+});
+```
 
-#The end result
+# The end result
 
 You can then use es6 features throughout your code. You can also still use commonJS style modules but you will need to use the require('./foo.js') syntax to import these modules rather than the es6 syntax.
 
-#es6 and jshint
+# es6 and jshint
 
 If you run jshint against your code (and you should) it will moan about the es6 keywords. To fix this set "esnext" to "true" in your .jshintrc file.

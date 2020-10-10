@@ -6,7 +6,7 @@ description: ""
 
 As part of the owin research I've been doing I decided to take another look at acceptance tests.
 
-##The Problem
+## The Problem
 
 For those are unsure acceptance tests are tests that test the entire system end-to-end, unlike unit tests which test a single element of the system in isolation.
 
@@ -20,16 +20,18 @@ The thing is that acceptance tests tend to be closer to real world usage but the
 
 That's a whole lot of bleugh.
 
-##Owin.Testing to the rescue
+## Owin.Testing to the rescue
 
 Owin.Testing is an implementation of an owin host that runs entirely in memory, no network binding is needed. I can run up the testing server using:
 
-    var testServer = TestServer.Create<MyApp.Startup>()
+`var testServer = TestServer.Create<MyApp.Startup>()`
 
 and then I can get an in mem version of the httpClient and make a call using:
 
-    var httpClient = testServer.HttpClient;
-    var response = await httpClient.GetAsync("/products/")
+```
+var httpClient = testServer.HttpClient;
+var response = await httpClient.GetAsync("/products/");
+```
 
 The great thing about this is that because my tests and app are running in the same process the test code can actually alter the functionality of the app. This would let you alter things like an injected data layer to tell it to use the test data. Also, as the app start point is now your tests you can
 
