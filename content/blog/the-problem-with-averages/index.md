@@ -4,6 +4,11 @@ date: "2014-10-23T22:12:03.284Z"
 description: ""
 ---
 
+import Assumed from './charts/assumed'
+import AssumedMinMax from './charts/assumedMinMax'
+import Alternate from './charts/alternate'
+import AlternateMinMax from './charts/alternateMinMax'
+
 One thing I like about working at Opentable is that we are strong believers in logging. We log pretty much everything we can with regards to the technical aspects of our sites and apis. This lets us do meaningful analysis in real time and lets us have confidence the performance and correctness of our sites and services.
 
 That said I've had a niggle for a while that something was not quite right. After attending a talk on statistics at Velocity EU I finally realised what it was.
@@ -16,11 +21,11 @@ It turns out that this is fine if the number of requests you get in a timebox is
 
 For example if I had an average response time of 4 requests per second, In my head I tend to make the assumption that the data that made up that value looks something like:
 
-![Assumed averages](./average-1-1.png)
+<Assumed/>
 
 Where the values are in blue and the average is in red. This shows a minor variance around the average. The service could be said to be pretty consistant. The problem is that my data could just as easily have been:
 
-![Alternate averages](./problem.png)
+<Alternate/>
 
 In this case my response time is highly inconsistant. In fact most of the time my response time is better than the original graph but I am seeing occasional peaks of high latency yet the average remains the same. This is going to be a problem for my consumers and the more data points you have that make up your timebox the greater the inconsistancies that can go undetected.
 
@@ -42,9 +47,9 @@ Kibana does not support plotting standard deviation (apparently it will as of ki
 
 My graphs from before with min and max plotted:
 
-![Min](./averageMin.png)
+<AssumedMinMax/>
 
-![Max](./problem-1.png)
+<AlternateMinMax/>
 
 We can now clearly see how variant our data is and drive to be as consistant as possible. We do have to be carefull that we break this down per request type though, doing min/max over all requests would be effectively meaningless.
 
