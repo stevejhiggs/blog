@@ -4,7 +4,7 @@ date: "2020-10-10T22:12:03.284Z"
 description: "Getting react running in markdown didn't prove too hard"
 ---
 
-import Counter from '../../../src/components/counter'
+import Counter from './counter'
 
 I wanted to have the ability to inject react into markdown for this blog. Luckily gatsby has a plugin called MDX that allows just this. You can see the changes needed [here](https://github.com/stevejhiggs/blog/commit/f538cb0b86f357192580ee42bc7bdddada87a741) and a fix for the rss generator [here](https://github.com/stevejhiggs/blog/commit/768f90f3b17000c21d0c644716e0f3b64a4e8937).
 
