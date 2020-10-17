@@ -1,10 +1,33 @@
 import React from "react";
 import { Link, graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import styled from "styled-components";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const StyledBlogPost = styled.article`
+  header h1 {
+    margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  }
+
+  header p {
+    font-size: var(--fontSize-2);
+    font-family: var(--font-heading);
+  }
+
+  ul,
+  ol {
+    margin-left: var(--spacing-8);
+  }
+`;
+
+const StyledNav = styled.nav`
+  ul {
+    margin: var(--spacing-0);
+  }
+`;
 
 const BlogPostTemplate: React.FC<PageProps<any>> = ({
   data,
@@ -21,11 +44,7 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <article
-        className="blog-post"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
+      <StyledBlogPost itemScope itemType="http://schema.org/Article">
         <header>
           <h1 itemProp="headline">{post.frontmatter.title}</h1>
           <p>{post.frontmatter.date}</p>
@@ -37,8 +56,8 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
         <footer>
           <Bio />
         </footer>
-      </article>
-      <nav className="blog-post-nav">
+      </StyledBlogPost>
+      <StyledNav>
         <ul
           style={{
             display: `flex`,
@@ -63,7 +82,7 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
             )}
           </li>
         </ul>
-      </nav>
+      </StyledNav>
     </Layout>
   );
 };

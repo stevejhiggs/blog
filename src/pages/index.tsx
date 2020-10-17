@@ -1,9 +1,30 @@
 import React from "react";
 import { Link, PageProps, graphql } from "gatsby";
+import styled from "styled-components";
 
 import Bio from "../components/bio";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+
+const StyledPostListItem = styled.article`
+  margin-bottom: var(--spacing-8);
+  margin-top: var(--spacing-8);
+
+  p {
+    margin-bottom: var(--spacing-0);
+  }
+
+  h2 {
+    font-size: var(--fontSize-4);
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-2);
+    margin-top: var(--spacing-0);
+  }
+
+  header {
+    margin-bottom: var(--spacing-4);
+  }
+`;
 
 const BlogIndex: React.FC<PageProps<any>> = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
@@ -32,8 +53,7 @@ const BlogIndex: React.FC<PageProps<any>> = ({ data, location }) => {
 
           return (
             <li key={post.fields.slug}>
-              <article
-                className="post-list-item"
+              <StyledPostListItem
                 itemScope
                 itemType="http://schema.org/Article"
               >
@@ -53,7 +73,7 @@ const BlogIndex: React.FC<PageProps<any>> = ({ data, location }) => {
                     itemProp="description"
                   />
                 </section>
-              </article>
+              </StyledPostListItem>
             </li>
           );
         })}
