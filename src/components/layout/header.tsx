@@ -1,10 +1,3 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
@@ -14,11 +7,27 @@ interface Props {
   title: string;
 }
 
+const StyledHeader = styled.header`
+  margin-bottom: var(--spacing-10);
+
+  h1 {
+    font-size: var(--fontSize-7);
+    margin: 0;
+  }
+
+  .header-link-home {
+    font-weight: var(--fontWeight-bold);
+    font-family: var(--font-heading);
+    text-decoration: none;
+    font-size: var(--fontSize-2);
+  }
+`;
+
 const Header: React.FC<Props> = ({ isRootPath, title }) => {
   let header: JSX.Element;
   if (isRootPath) {
     header = (
-      <h1 className="main-heading">
+      <h1>
         <Link to="/">{title}</Link>
       </h1>
     );
@@ -30,7 +39,7 @@ const Header: React.FC<Props> = ({ isRootPath, title }) => {
     );
   }
 
-  return <header className="global-header">{header}</header>;
+  return <StyledHeader>{header}</StyledHeader>;
 };
 
 export default Header;
