@@ -8,6 +8,23 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Image from "gatsby-image";
+import styled from "styled-components";
+
+const StyledBio = styled.div`
+  display: flex;
+  margin-bottom: var(--spacing-16);
+
+  p {
+    margin-bottom: var(--spacing-0);
+  }
+
+  .bio-avatar {
+    margin-right: var(--spacing-4);
+    margin-bottom: var(--spacing-0);
+    min-width: 50px;
+    border-radius: 100%;
+  }
+`;
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -39,7 +56,7 @@ const Bio = () => {
   const avatar = data?.avatar?.childImageSharp?.fixed;
 
   return (
-    <div className="bio">
+    <StyledBio>
       <Image
         fixed={avatar}
         alt={author?.name || ``}
@@ -56,7 +73,7 @@ const Bio = () => {
         <span> | </span>
         <a href="https://twitter.com/shiggsatwork">twitter</a>
       </p>
-    </div>
+    </StyledBio>
   );
 };
 
