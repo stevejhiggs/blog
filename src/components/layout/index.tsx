@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./header";
 import Footer from "./footer";
+import GlobalStyle from "../../../styles/global-style";
 
 interface Props {
   location: any;
@@ -19,11 +20,14 @@ const Layout: React.FC<Props> = ({ location, title, children }) => {
   const isRootPath = location.pathname === rootPath;
 
   return (
-    <StyledWrapper data-is-root-path={isRootPath}>
-      <Header isRootPath={isRootPath} title={title} />
-      <main>{children}</main>
-      <Footer />
-    </StyledWrapper>
+    <>
+      <GlobalStyle />
+      <StyledWrapper data-is-root-path={isRootPath}>
+        <Header isRootPath={isRootPath} title={title} />
+        <main>{children}</main>
+        <Footer />
+      </StyledWrapper>
+    </>
   );
 };
 
