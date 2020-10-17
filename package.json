@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
+    "@types/react-helmet": "^6.1.0",
     "@types/recharts": "^1.8.16",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.80",
