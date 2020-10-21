@@ -20,6 +20,7 @@ const StyledBlogPost = styled.article`
   ul,
   ol {
     margin-left: var(--spacing-8);
+    list-style-type: disc;
   }
 `;
 
