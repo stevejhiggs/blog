@@ -62,7 +62,7 @@ const Bio = () => {
       <p>
         <strong>Steve</strong> writes software for a living and for fun.
         <br />
-        <a href="https://github.com/shiggsatwork">github</a>
+        <a href="https://github.com/stevejhiggs">github</a>
         <span> | </span>
         <a href="https://twitter.com/shiggsatwork">twitter</a>
       </p>
