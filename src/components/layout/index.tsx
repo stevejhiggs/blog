@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Header from "./header";
 import Footer from "./footer";
-import GlobalStyle from "../../../styles/global-style";
+import GlobalStyle from "../../styles/global-style";
 
 interface Props {
   location: any;

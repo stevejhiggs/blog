@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { Link, graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import styled from "styled-components";
@@ -30,14 +30,10 @@ const StyledNav = styled.nav`
   }
 `;
 
-const BlogPostTemplate: React.FC<PageProps<any>> = ({
-  data,
-  pageContext,
-  location,
-}) => {
+const BlogPostTemplate: React.FC<PageProps<any>> = ({ data, location }) => {
   const post = data.mdx;
   const siteTitle = data.site.siteMetadata?.title || `Title`;
-  const { previous, next } = pageContext as any;
+  const { previous, next } = data as any;
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -91,13 +87,17 @@ const BlogPostTemplate: React.FC<PageProps<any>> = ({
 export default BlogPostTemplate;
 
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
+  query BlogPostBySlug(
+    $id: String!
+    $previousPostId: String
+    $nextPostId: String
+  ) {
     site {
       siteMetadata {
         title
       }
     }
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
       body
@@ -105,6 +105,22 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+      }
+    }
+    previous: markdownRemark(id: { eq: $previousPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
+      }
+    }
+    next: markdownRemark(id: { eq: $nextPostId }) {
+      fields {
+        slug
+      }
+      frontmatter {
+        title
       }
     }
   }

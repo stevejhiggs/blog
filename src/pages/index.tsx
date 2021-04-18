@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, PageProps, graphql } from "gatsby";
+import * as React from "react";
+import { Link, graphql, PageProps } from "gatsby";
 import styled from "styled-components";
 
 import Bio from "../components/bio";
@@ -34,12 +34,14 @@ const BlogIndex: React.FC<PageProps<any>> = ({ data, location }) => {
     return (
       <Layout location={location} title={siteTitle}>
         <SEO title="All posts" />
-        <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
+        <footer>
+          <Bio />
+        </footer>
       </Layout>
     );
   }
@@ -47,6 +49,7 @@ const BlogIndex: React.FC<PageProps<any>> = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
+      <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map((post) => {
           const title = post.frontmatter.title || post.fields.slug;
