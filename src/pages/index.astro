@@ -1,0 +1,31 @@
+---
+import MainLayout from "@/layouts/main-layout.astro";
+import { Image } from "astro:assets";
+import { hobbies } from "@/config/about.ts";
+import { Button } from "@/components/ui/button";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="About" description="Lorem ipsum dolor sit amet">
+  <section class="space-y-5">
+    <section
+      class="relative container max-w-screen-md mb-28 mt-16 sm:mt-20 lg:mt-28"
+    >
+      <div class="flex h-full flex-col justify-between">
+        <div class="grid gap-8 sm:grid-cols-2">
+          <div>
+            <h1 class="text-4xl font-heading text-foreground">Steve Higgs</h1>
+            <p class="text-base text-muted-foreground mt-0.5">
+              Fullstack Developer
+            </p>
+          </div>
+          <div>
+            <p class="mb-12 text-base text-muted-foreground">
+              Starting with c++ I've wended a road through asp, c# and java. I now mostly spend my time in js though using nodejs for backend and various frontend frameworks (and bun when I can get away with it).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</MainLayout>
