@@ -2,39 +2,59 @@ import React from "react";
 import {
   LineChart,
   XAxis,
-  Tooltip,
   Line,
   YAxis,
   ReferenceLine,
-  ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
-const data = [
-  { interval: 1, value: 1 },
-  { interval: 2, value: 2 },
-  { interval: 3, value: 12 },
-  { interval: 4, value: 1 },
+import {
+  type ChartConfig,
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart";
+
+const chartData = [
+  { month: "January", val: 1 },
+  { month: "February", val: 2 },
+  { month: "March", val: 12 },
+  { month: "April", val: 1 },
 ];
+
+const chartConfig = {
+  val: {
+    label: "Value",
+    color: "hsl(var(--chart-1))",
+  },
+} satisfies ChartConfig;
 
 const Chart: React.FC = () => {
   return (
-    <ResponsiveContainer width="100%" height={500}>
-      <LineChart
-        data={data}
-        margin={{ top: 5, right: 10, left: 10, bottom: 50 }}
-      >
+    <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
+      <LineChart accessibilityLayer data={chartData}>
+        <CartesianGrid vertical={false} />
         <ReferenceLine
           y={4}
           label="Average"
-          stroke="red"
+          stroke="hsl(var(--chart-4))"
           strokeDasharray="3 3"
         />
-        <YAxis dataKey="value" />
-        <XAxis dataKey="interval" />
-        <Tooltip />
-        <Line type="monotone" dataKey="value" stroke="#ff7300" yAxisId={0} />
+        <YAxis dataKey="val" />
+        <XAxis dataKey="month" />
+        <ChartTooltip
+          cursor={false}
+          content={<ChartTooltipContent hideLabel />}
+        />
+        <Line
+          type="monotone"
+          dataKey="val"
+          stroke="hsl(var(--chart-1))"
+          strokeWidth={2}
+          dot={false}
+        />
       </LineChart>
-    </ResponsiveContainer>
+    </ChartContainer>
   );
 };
 
