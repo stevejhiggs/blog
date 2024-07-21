@@ -1,5 +1,5 @@
 ---
-title: "Moving this blog to gatsby"
+title: "Moving this blog to Gatsby"
 pubDate: "2020-10-03T22:12:03.284Z"
 description: ""
 cover: "/images/blog/flapper.webp"
@@ -23,11 +23,11 @@ After thinking a bit I also came up with the following nice to haves:
 - Support for also hosting client-side experiments
 - Simple image hosting / upload
 
-## Static hosting with gatsby
+## Static hosting with Gatsby
 
-[Gatsby](https://www.gatsbyjs.com/) is a static site generator based on [react](https://reactjs.org/). This means that you can create pages locally, connect gatsby to some content and gatsby will, at compile time, create static pages that do not require any kind of server. This may be as simple as just rendering out the pages you create but can also involve creating many pages using a template.
+[Gatsby](https://www.gatsbyjs.com/) is a static site generator based on [react](https://reactjs.org/). This means that you can create pages locally, connect Gatsby to some content and Gatsby will, at compile time, create static pages that do not require any kind of server. This may be as simple as just rendering out the pages you create but can also involve creating many pages using a template.
 
-For example, lets say I wanted to create my shop using gatsby. Rather than hosting a full cms for managing my product pages I can just create a product page template and connect gatesby to a source of product data. At compile time gatsby will then create a page for each product using the template and the data you have provided.
+For example, lets say I wanted to create my shop using gatsby. Rather than hosting a full cms for managing my product pages I can just create a product page template and connect gatesby to a source of product data. At compile time Gatsby will then create a page for each product using the template and the data you have provided.
 
 ## Gatsby data sources
 
@@ -43,7 +43,7 @@ This blog then can be implemented as:
 
 ## Gatsby starter
 
-Gatsby has a number of [pre-built starters](https://www.gatsbyjs.com/starters/?v=2) including a number of blog starters that would fit my requirements. But in this case I used the [gatsby starter blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/). I then did some customisations on top of it:
+Gatsby has a number of [pre-built starters](https://www.gatsbyjs.com/starters/?v=2) including a number of blog starters that would fit my requirements. But in this case I used the [Gatsby starter blog](https://www.gatsbyjs.com/starters/gatsbyjs/gatsby-starter-blog/). I then did some customisations on top of it:
 
 - Customised the site details
 - Ported to typescript
@@ -81,4 +81,4 @@ Getting it set up was simply a case of me connecting netlify to my github accoun
 As for my wishlist:
 
 - Support for also hosting client-side experiments - I can create abitrary react pages. It's also possible to inject react components into markdown but that will need a little work on my part
-- Simple image hosting / upload - Images are just files in the repo and gatsby auto-optimises them for me.
+- Simple image hosting / upload - Images are just files in the repo and Gatsby auto-optimises them for me.
