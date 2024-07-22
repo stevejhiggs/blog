@@ -19,7 +19,8 @@ Now rather than using RavenDb, MongoDb or one of the other wonderful document ba
 
 Everything else should be as simple as possible. To complicate things this will be modelling a system whose sql database already exists, a “we need a web interface for marketing’s crazy-pants database” problem.
 
-##An upgradable, deployable database
+## An upgradable, deployable database
+
 This always used to be an issue with sql databases. Ideally I want to work on a local copy of the db, then, when ready deploy our changes to the running database as easily as possible. I also want to have the same safety net that source control gives us for our code.
 
 ## Sql Server Database projects, ssdt and dacpacs

@@ -82,6 +82,6 @@ Benchmarking was troublesome as I was running both virtualbox and iis on the sam
 
 That's pretty good in my book. I think with proper seperate machines the logged one would be closer to 2900.
 
-##Other uses
+## Other uses
 
 One thing I'm going to experiment with is using statsd to monitor the size of various queues in a distributed system.
