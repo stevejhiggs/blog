@@ -9,22 +9,22 @@ import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.shiggsatwork.co.uk",
-  integrations: [
-    mdx({
-      syntaxHighlight: "shiki",
-      shikiConfig: {
-        theme: "github-dark-dimmed",
-      },
-      gfm: true,
-    }),
-    icon(),
-    sitemap(),
-    react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-  ],
-  output: "static",
-  adapter: netlify(),
+	site: "https://www.shiggsatwork.co.uk",
+	integrations: [
+		mdx({
+			syntaxHighlight: "shiki",
+			shikiConfig: {
+				theme: "github-dark-dimmed",
+			},
+			gfm: true,
+		}),
+		icon(),
+		sitemap(),
+		react(),
+		tailwind({
+			applyBaseStyles: false,
+		}),
+	],
+	output: "static",
+	adapter: netlify(),
 });
