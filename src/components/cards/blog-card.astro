@@ -22,6 +22,7 @@ const post = Astro.props;
       src={post.data.cover}
       alt="descriptive text"
       transition:name={`img-${post.slug}`}
+      decoding="async"
     />
   </a>
 
