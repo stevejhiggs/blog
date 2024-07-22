@@ -3,7 +3,7 @@ title: "Questioning the architecture"
 pubDate: "2013-10-08T22:12:03.284Z"
 description: "Maybe we don't need all this stuff?"
 cover: "/images/blog/question.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 Note: It would probably be best to take a look at https://github.com/stevejhiggs/MiniArch which shows the current state of the project.

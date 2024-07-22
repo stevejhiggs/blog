@@ -3,7 +3,7 @@ title: "Asp.net Mvc and webforms hybrid"
 pubDate: "2012-03-13T22:12:03.284Z"
 description: "Mixing mvc and winforms"
 cover: "/images/blog/hybrid.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 I was working on a large existing webforms project that the team involved wishes to port to mvc as it is "the new hotness". During a night where I was suffering from insomnia I suddenly began wondering why….what exactly is wrong with the webforms model?

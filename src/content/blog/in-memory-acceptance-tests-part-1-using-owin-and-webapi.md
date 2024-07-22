@@ -3,7 +3,7 @@ title: "In memory acceptance tests part 1: using owin and webapi"
 pubDate: "2014-06-01T22:12:03.284Z"
 description: ""
 cover: "/images/blog/speed.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 As part of the owin research I've been doing I decided to take another look at acceptance tests.

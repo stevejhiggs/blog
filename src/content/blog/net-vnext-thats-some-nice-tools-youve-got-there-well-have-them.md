@@ -3,7 +3,7 @@ title: ".net vNext : that's some nice tools you've got there, we'll have them"
 pubDate: "2014-05-30T22:12:03.284Z"
 description: "The future of .net is copying the best from elsewhere"
 cover: "/images/blog/thief.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 (intentionally contentious title)

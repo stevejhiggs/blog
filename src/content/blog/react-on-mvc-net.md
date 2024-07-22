@@ -3,7 +3,7 @@ title: "React on mvc.net"
 pubDate: "2015-02-21T22:12:03.284Z"
 description: ""
 cover: "/images/blog/lipstick.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 I've been playing around with react.js and flux a fair bit and I'd thought I'd take a look and see how the support in the .net world is coming on. For me there are two pieces.

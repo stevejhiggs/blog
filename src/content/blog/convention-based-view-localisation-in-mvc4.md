@@ -3,7 +3,7 @@ title: "Convention based view localisation in mvc4"
 pubDate: "2013-01-01T22:12:03.284Z"
 description: ""
 cover: "/images/blog/earth.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 I really like the mobile stuff in mvc4 (apart from faffing around with the 51 degrees stuff to actually get it to see any phones as phones). Creating mobile views just by creating a new view in the form of [viewname].mobile is great!

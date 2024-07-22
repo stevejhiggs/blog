@@ -3,7 +3,7 @@ title: "Better scaling for .net api calls using project helios"
 pubDate: "2014-02-24T22:12:03.284Z"
 description: "Can .net be perfomant?"
 cover: "/images/blog/helios.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 ## What’s helios?

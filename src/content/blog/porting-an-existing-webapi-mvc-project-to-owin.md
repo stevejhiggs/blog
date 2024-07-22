@@ -3,7 +3,7 @@ title: "Porting an existing webapi/mvc project to owin"
 pubDate: "2014-05-27T22:12:03.284Z"
 description: "Bye bye IIS"
 cover: "/images/blog/port.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 While researching a talk on the owin/katana stack it occurred to me that I had not actually tried to move a reasonably sized exisisting project from the traditional iis/system.web pattern over to owin.

@@ -3,7 +3,7 @@ title: "Why I use ravendb for pretty much all my home .net projects"
 pubDate: "2013-03-08T22:12:03.284Z"
 description: ""
 cover: "/images/blog/raven.webp"
-category: ".net"
+category: "dotnet"
 ---
 
 People that have talked to me about development will probably have picked up the fact that I love working with ravendb. I guess I have never really gone over why though.
