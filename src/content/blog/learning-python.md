@@ -89,7 +89,7 @@ This worked but going from a git checkout to a running project kindof sucked:
 - run `pip -r requirements.txt`
 - open vscode, wonder why it shows all your packages as missing, realise you need to manually set the virtualenv
 
-All of this set off "This can't be what people actually do, right?" alarm bells in my head and set me off to go find [Poetry](https://python-poetry.org/).
+All of this set off "This can't be what people actually do, right?" alarm bells in my head and set me off to go find [Poetry](https://python-poetry.org/). Maybe I'm using it wrong?
 
 ### Getting testing running was much harder than it should be
 
