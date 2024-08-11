@@ -49,20 +49,20 @@ This is all new since the last time I looked at Python and as someone who curren
 
 Install the "python" extension and that's pretty much it. You get debugging, language server, test running all in one place.....nice.
 
-### Poetry restores sanity
+### PDM restores sanity
 
-I was tearing my (non-existent) hair out with the state of package and virtualenv management (see below) when I found [Poetry](https://python-poetry.org/). This gave me:
+I was tearing my (non-existent) hair out with the state of package and virtualenv management (see below) when I found [PDM](https://pdm-project.org/). This gave me:
 
 - a package file + lockfile approach to packages with the ability to detect and apply available upgrades
 - development dependancy support. Things you want a dev to be able to use but don't want to be part of the final image
-- Task runner support. E.g `poetry run dev` to start my server in dev mode
+- Task runner support. E.g `pdm run dev` to start my server in dev mode
 - Virtualenv support built in
 
 Thanks to this getting the project running in a virtualenv with the right packages is a matter of running:
 
 ```bash
-poetry install
-poetry run dev
+pdm install
+pdm dev
 ```
 
 Rather than the multi-tool monstrosity I had before. With a small amount of config tweaking I also made it so that vsCode automatically uses the correct virtualenv.
@@ -89,17 +89,13 @@ This worked but going from a git checkout to a running project kindof sucked:
 - run `pip -r requirements.txt`
 - open vscode, wonder why it shows all your packages as missing, realise you need to manually set the virtualenv
 
-All of this set off "This can't be what people actually do, right?" alarm bells in my head and set me off to go find [Poetry](https://python-poetry.org/). Maybe I'm using it wrong?
+All of this set off "This can't be what people actually do, right?" alarm bells in my head and set me off to go find [PDM](https://pdm-project.org/). Maybe I was using it wrong?
 
 ### Getting testing running was much harder than it should be
 
-I'm using pytest for testing and while writing tests themselves was simple, getting the tests consistently running when I ran `poetry pytest` was incredibly painful due to subtle differences in how python resolves files when ran directly and how the pytest executable resolves files. Eventually figured it out with some semi-magical config settings but unfortunately most of the advice online amounted to "I randomly poked and moved files around until it worked and now I don't touch it".
+I'm using pytest for testing and while writing tests themselves was simple, getting the tests consistently running when I ran `pdm pytest` was incredibly painful due to subtle differences in how python resolves files when ran directly and how the pytest executable resolves files. Eventually figured it out with some semi-magical config settings but unfortunately most of the advice online amounted to "I randomly poked and moved files around until it worked and now I don't touch it".
 
 Well that and I spent a number of hours wondering why my test was not running then realised I hadn't actually written one :)
-
-### Missing simple task runner
-
-While poetry has a task runner it relies on having a python entry point. Sometime its really useful to just be able to call an executable. E.g pytest or the ruff linter.
 
 ## Overall
 
