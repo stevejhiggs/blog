@@ -8,7 +8,7 @@ category: "AI"
 
 As a relative newcomer to the AI space I was very aware that a significant proportion of the code that exists is written in Python and that as such I needed to to set aside some time to learn.
 
-Learning a new language doesn't really hold any concerns any more as, after you've learned a few, the process of learning another new language gets simpler and simpler (I'm told this is also true for spoken languages, alas I only speak the one). While all programming languages have differences you mostly find that the basic concepts remain the same and it's a matter of mapping the way of doing things in a language you do know to a language you don't while learning the unique advantages each language has.
+Learning the basics of a new language doesn't really hold any concerns any more as, after you've learned a few, the process of learning another new language gets simpler and simpler (I'm told this is also true for spoken languages, alas I only speak the one). Mastering the ins and outs of a langauge tends to require building real things in it for quite some time but while all programming languages have differences you mostly find that the basic concepts remain the same and it's a matter of mapping the way of doing things in a language you do know to a language you don't while learning the unique advantages each language has.
 
 There is a catch here though, it's important to learn to write in your new language in a way that is idiomatic for that language, it's not great to attempt to force your newly created Go project into a Java shaped box (I can always tell when a nodejs dev was recently a c# dev when there is an unneeded inversion of control layer stuck in the middle of it).
 
