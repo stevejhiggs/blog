@@ -99,7 +99,7 @@ export const MdxComponents = {
 		alt,
 		...props
 	}: React.ImgHTMLAttributes<HTMLImageElement>) => (
-		// eslint-disable-next-line @next/next/no-img-element
+		// biome-ignore lint/a11y/useAltText: <explanation>
 		<img className={cn("rounded-md border", className)} alt={alt} {...props} />
 	),
 	hr: ({ ...props }) => <hr className="my-4 md:my-8" {...props} />,
@@ -138,6 +138,7 @@ export const MdxComponents = {
 				"mb-4 mt-6 overflow-x-auto rounded-lg border bg-black p-4",
 				className,
 			)}
+			// biome-ignore lint/a11y/noNoninteractiveTabindex: <explanation>
 			tabIndex={0}
 			{...props}
 		/>

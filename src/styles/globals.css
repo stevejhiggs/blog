@@ -5,106 +5,106 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --background-200: 0 0% 98%;
+	:root {
+		--background: 0 0% 100%;
+		--background-200: 0 0% 98%;
 
-    --foreground: 0 0% 9%;
+		--foreground: 0 0% 9%;
 
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 40%;
+		--muted: 0 0% 92%;
+		--muted-foreground: 0 0% 40%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 0 0% 9%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
+		--border: 0 0% 92%;
+		--input: 0 0% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+		--card: 0 0% 100%;
+		--card-foreground: 0 0% 9%;
 
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
+		--primary: 0 0% 9%;
+		--primary-foreground: 0 0% 98%;
 
-    --secondary: 0 0% 92%;
-    --secondary-foreground: 0 0% 9%;
+		--secondary: 0 0% 92%;
+		--secondary-foreground: 0 0% 9%;
 
-    --accent: 0, 0%, 0%, 0.06;
-    --accent-foreground: 0 0% 9%;
+		--accent: 0, 0%, 0%, 0.06;
+		--accent-foreground: 0 0% 9%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+		--destructive: 0 100% 50%;
+		--destructive-foreground: 210 40% 98%;
 
-    --ring: 215 20.2% 65.1%;
+		--ring: 215 20.2% 65.1%;
 
-    --radius: 0.5rem;
-    --ds-shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
+		--radius: 0.5rem;
+		--ds-shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
 
-    --chart-1: 173 58% 39%;
-    --chart-2: 12 76% 61%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-  }
+		--chart-1: 173 58% 39%;
+		--chart-2: 12 76% 61%;
+		--chart-3: 197 37% 24%;
+		--chart-4: 43 74% 66%;
+		--chart-5: 27 87% 67%;
+	}
 
-  .dark {
-    --background: 0 0% 4%;
-    --background-200: 0 170% 0%;
+	.dark {
+		--background: 0 0% 4%;
+		--background-200: 0 170% 0%;
 
-    --foreground: 0 0% 93%;
+		--foreground: 0 0% 93%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 80%;
+		--muted: 0 0% 12%;
+		--muted-foreground: 0 0% 80%;
 
-    --accent: 0, 0%, 100%, 0.09;
-    --accent-foreground: 0 0% 93%;
+		--accent: 0, 0%, 100%, 0.09;
+		--accent-foreground: 0 0% 93%;
 
-    --popover: 0 0% 4%;
-    --popover-foreground: 0 0% 93%;
+		--popover: 0 0% 4%;
+		--popover-foreground: 0 0% 93%;
 
-    --border: 0 0% 12%;
-    --input: 0 0% 12%;
+		--border: 0 0% 12%;
+		--input: 0 0% 12%;
 
-    --card: 0 0% 4%;
-    --card-foreground: 0 0% 93%;
+		--card: 0 0% 4%;
+		--card-foreground: 0 0% 93%;
 
-    --primary: 0 0% 93%;
-    --primary-foreground: 222.2 47.4% 1.2%;
+		--primary: 0 0% 93%;
+		--primary-foreground: 222.2 47.4% 1.2%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 93%;
+		--secondary: 0 0% 12%;
+		--secondary-foreground: 0 0% 93%;
 
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 0 0% 93%;
+		--destructive: 0 63% 31%;
+		--destructive-foreground: 0 0% 93%;
 
-    --ring: 0 0% 12%;
+		--ring: 0 0% 12%;
 
-    --radius: 0.5rem;
-    --ds-shadow-border: 0 0 0 1px hsla(0, 0%, 100%, 0.145);
+		--radius: 0.5rem;
+		--ds-shadow-border: 0 0 0 1px hsla(0, 0%, 100%, 0.145);
 
-    --chart-1: 220 70% 50%;
-    --chart-5: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-2: 340 75% 55%;
-  }
+		--chart-1: 220 70% 50%;
+		--chart-5: 160 60% 45%;
+		--chart-3: 30 80% 55%;
+		--chart-4: 280 65% 60%;
+		--chart-2: 340 75% 55%;
+	}
 }
 
 @layer base {
-  @font-face {
-    font-family: "CalSans Semibold";
-    src: url("/fonts/calsans-semibold.woff2") format("woff2");
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-  }
+	@font-face {
+		font-family: "CalSans Semibold";
+		src: url("/fonts/calsans-semibold.woff2") format("woff2");
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 
-  * {
-    @apply border-border;
-  }
+	* {
+		@apply border-border;
+	}
 
-  /* If you want a custom scrollbar - By @diomed */
-  /* * {
+	/* If you want a custom scrollbar - By @diomed */
+	/* * {
     @apply border-border;
     --sb-track-color: #ffffff;
     --sb-thumb-color: #e2e3f1;
@@ -127,87 +127,72 @@
     border-radius: 10px;
   } */
 
-  html {
-    /* scroll-padding-top: 4rem; */
-    @apply scroll-pt-16 lg:scroll-pt-0;
-  }
+	html {
+		/* scroll-padding-top: 4rem; */
+		@apply scroll-pt-16 lg:scroll-pt-0;
+	}
 
-  body {
-    @apply bg-background text-foreground font-sans;
-    font-feature-settings:
-      "rlig" 1,
-      "calt" 1;
-  }
+	body {
+		@apply bg-background text-foreground font-sans;
+		font-feature-settings: "rlig" 1, "calt" 1;
+	}
 
-  /* Documentation part */
-  .docs-grid-cols-2 {
-    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4;
-  }
+	/* Documentation part */
+	.docs-grid-cols-2 {
+		@apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-4;
+	}
 
-  .callout > * {
-    @apply my-0 !important;
-  }
+	.callout > * {
+		@apply my-0 !important;
+	}
 
-  .font-icon-callout {
-    font-family:
-      Apple Color Emoji,
-      Segoe UI Emoji,
-      Segoe UI Symbol;
-  }
+	.font-icon-callout {
+		font-family: "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	}
 
-  /* MdxComponent: For <code></code> with no parent <pre></pre> */
-  :not(pre) > code {
-    @apply relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm bg-background text-foreground;
-  }
+	/* MdxComponent: For <code></code> with no parent <pre></pre> */
+	:not(pre) > code {
+		@apply relative rounded border px-[0.3rem] py-[0.2rem] font-mono text-sm bg-background text-foreground;
+	}
 }
 
 .text-gradient_indigo-purple {
-  background: linear-gradient(90deg, #6366f1 0%, rgba(168 85 247 / 0.9) 100%);
-  /* background: linear-gradient(83.21deg,#3245ff 0%,#bc52ee 100%); */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+	background: linear-gradient(90deg, #6366f1 0%, rgba(168 85 247 / 0.9) 100%);
+	/* background: linear-gradient(83.21deg,#3245ff 0%,#bc52ee 100%); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
 
 .bg_release_version {
-  background: linear-gradient(
-    25deg,
-    #3a084e,
-    #5b0e81,
-    #bc4c9b,
-    #df7f4f
-  ) !important;
+	background: linear-gradient(25deg, #3a084e, #5b0e81, #bc4c9b, #df7f4f) !important;
 }
 
 /* Vercel card style */
 .card_border {
-  box-shadow:
-    var(--ds-shadow-border),
-    0 4px 6px rgba(0, 0, 0, 0.04);
-  transition: box-shadow 0.15s ease;
+	box-shadow: var(--ds-shadow-border), 0 4px 6px rgba(0, 0, 0, 0.04);
+	transition: box-shadow 0.15s ease;
 }
 
 .card_border:hover {
-  box-shadow:
-    var(--ds-shadow-border),
-    0 6px 14px rgba(0, 0, 0, 0.08);
+	box-shadow: var(--ds-shadow-border), 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
 .dark .card_border:hover {
-  box-shadow: 0 0 0 1px white;
+	box-shadow: 0 0 0 1px white;
 }
 
 /* Custom scrollbar  */
 [data-radix-scroll-area-viewport] {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  -webkit-overflow-scrolling: touch;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+	-webkit-overflow-scrolling: touch;
 }
 
 [data-radix-scroll-area-viewport]::-webkit-scrollbar {
-  display: none;
+	display: none;
 }
 
 .anime-grid {
-  @apply grid content-start [--column-gap:12px] sm:[--column-gap:14px] md:[--column-gap:18px] gap-x-[--column-gap] gap-y-8 md:gap-y-10 [--min-column-width:150px] [--max-column-count:7] [--total-gap-width:calc((var(--max-column-count)-1)*var(--column-gap))] [--max-column-width:calc((100%-var(--total-gap-width))/var(--max-column-count))] grid-cols-[repeat(auto-fill,minmax(max(var(--min-column-width),var(--max-column-width)),1fr))];
+	@apply grid content-start [--column-gap:12px] sm:[--column-gap:14px] md:[--column-gap:18px] gap-x-[--column-gap] gap-y-8 md:gap-y-10 [--min-column-width:150px] [--max-column-count:7] [--total-gap-width:calc((var(--max-column-count)-1)*var(--column-gap))] [--max-column-width:calc((100%-var(--total-gap-width))/var(--max-column-count))] grid-cols-[repeat(auto-fill,minmax(max(var(--min-column-width),var(--max-column-width)),1fr))];
 }

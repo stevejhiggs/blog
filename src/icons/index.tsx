@@ -49,7 +49,7 @@ export const Icons = {
 				stroke="currentColor"
 				fill="currentColor"
 				strokeWidth="0px"
-			></path>
+			/>
 		</svg>
 	),
 	wrenchSrewdriver: ({ ...props }: LucideProps) => (

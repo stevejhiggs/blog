@@ -13,7 +13,7 @@ function flattenNode(node) {
 		if (!textTypes.includes(node.type)) return;
 		p.push(node.value);
 	});
-	return p.join(``);
+	return p.join("");
 }
 
 interface Item {
@@ -50,7 +50,9 @@ function getItems(node, current): Items {
 		current.items = node.children.map((i) => getItems(i, {}));
 
 		return current;
-	} else if (node.type === "listItem") {
+	}
+
+	if (node.type === "listItem") {
 		const heading = getItems(node.children[0], {});
 
 		if (node.children.length > 1) {

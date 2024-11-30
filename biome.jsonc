@@ -9,7 +9,17 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"complexity": {
+				"noForEach": "off"
+			},
+			"a11y": {
+				"noSvgWithoutTitle": "off",
+				"useGenericFontNames": "off"
+			},
+			"suspicious": {
+				"noArrayIndexKey": "off"
+			}
 		}
 	},
 	"vcs": {
