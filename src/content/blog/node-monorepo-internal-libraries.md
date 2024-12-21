@@ -83,4 +83,9 @@ Yep, worked without any special configuration
 The futures pretty bright for working with bun. There are still some wrinkles but its advancing quickly
 and the shear amount of platform boilerplate that you can just delete to get this stuff working is incredibly impressive.
 
+There are a few areas that need improving through:
+
+- better sourcemap support
+- an equivilent to [pnpms catalog support](https://github.com/oven-sh/bun/issues/4844) allowing package versions to be kept in line accross all parts of the monorepo
+
 Next up **pnpm.....** why do I have the feeling this is not going to be anywhere near as simple?
