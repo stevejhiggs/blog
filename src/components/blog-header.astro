@@ -22,7 +22,7 @@ const { category } = Astro.params;
   {
     categories?.length ? (
       <ul class="flex snap-x snap-mandatory overflow-auto items-center space-x-2 lg:space-x-2.5 pb-2">
-        <li class="flex-shrink-0 snap-start">
+        <li class="shrink-0 snap-start">
           <a
             href={`/blog`}
             class={cn(
@@ -36,7 +36,7 @@ const { category } = Astro.params;
           </a>
         </li>
         {categories.map((item) => (
-          <li class="flex-shrink-0 snap-start">
+          <li class="shrink-0 snap-start">
             <a
               href={`/blog/category/${item}`}
               class={cn(

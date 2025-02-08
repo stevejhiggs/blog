@@ -72,7 +72,7 @@ export const MdxComponents = {
 	),
 	p: ({ className, ...props }: Props) => (
 		<p
-			className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}
+			className={cn("leading-7 not-first:mt-6", className)}
 			{...props}
 		/>
 	),
@@ -88,7 +88,7 @@ export const MdxComponents = {
 	blockquote: ({ className, ...props }: Props) => (
 		<blockquote
 			className={cn(
-				"mt-6 border-l-2 pl-6 italic [&>*]:text-muted-foreground",
+				"mt-6 border-l-2 pl-6 italic *:text-muted-foreground",
 				className,
 			)}
 			{...props}
