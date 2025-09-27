@@ -1,17 +1,16 @@
 ---
-import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { cn, formatDate } from "@/lib/utils";
-import { Icon } from "astro-icon/components";
-import MainLayout from "./main-layout.astro";
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
+import { cn, formatDate } from '@/lib/utils';
+import MainLayout from './main-layout.astro';
 
-type Props = CollectionEntry<"blog">;
+type Props = CollectionEntry<'blog'>;
 
 const slug = Astro.props.slug;
-const { title, description, pubDate, updatedDate, cover, category } =
-	Astro.props.data;
+const { title, description, pubDate, updatedDate, cover, category } = Astro.props.data;
 ---
 
 <MainLayout title={title} description={description}>

@@ -1,44 +1,39 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { buttonVariants } from "@/components/ui/button";
-import { docsConfig } from "@/config/docs";
-import { cn } from "@/lib/utils";
-import { Icon } from "astro-icon/components";
+import type { CollectionEntry } from 'astro:content';
+import { Icon } from 'astro-icon/components';
+import { buttonVariants } from '@/components/ui/button';
+import { docsConfig } from '@/config/docs';
+import { cn } from '@/lib/utils';
 
 type Props = {
-	slug: CollectionEntry<"docs">["slug"];
+  slug: CollectionEntry<'docs'>['slug'];
 };
 
 export function getPagerForDoc(slug: string) {
-	const flattenedLinks = [...flatten(docsConfig.sidebarNav)];
-	let activeIndex = flattenedLinks.findIndex(
-		(link) => `/docs/${slug}` === link?.href,
-	);
+  const flattenedLinks = [...flatten(docsConfig.sidebarNav)];
+  let activeIndex = flattenedLinks.findIndex((link) => `/docs/${slug}` === link?.href);
 
-	activeIndex = Math.max(activeIndex, 0);
-	const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
-	const next =
-		activeIndex !== flattenedLinks.length - 1
-			? flattenedLinks[activeIndex + 1]
-			: null;
-	return {
-		prev,
-		next,
-	};
+  activeIndex = Math.max(activeIndex, 0);
+  const prev = activeIndex !== 0 ? flattenedLinks[activeIndex - 1] : null;
+  const next = activeIndex !== flattenedLinks.length - 1 ? flattenedLinks[activeIndex + 1] : null;
+  return {
+    prev,
+    next
+  };
 }
 
-// @ts-ignore
+// @ts-expect-error
 export function flatten(links: { items? }[]) {
-	return links.reduce((flat, link) => {
-		return flat.concat(link.items ? flatten(link.items) : link);
-	}, []);
+  return links.reduce((flat, link) => {
+    return flat.concat(link.items ? flatten(link.items) : link);
+  }, []);
 }
 
 const { slug } = Astro.props;
 const pager = getPagerForDoc(slug);
 
 if (!pager) {
-	return null;
+  return null;
 }
 ---
 

@@ -1,14 +1,14 @@
 ---
-import BaseHead from "@/components/layout/base-head.astro";
-import TailwindIndicator from "@/components/tailwind-indicator.astro";
-import { cn } from "@/lib/utils";
 // NOTE: work with { Toaster } from "@/components/ui/sonner" but need to update dark theme
-import { Toaster } from "sonner";
+import { Toaster } from 'sonner';
+import BaseHead from '@/components/layout/base-head.astro';
+import TailwindIndicator from '@/components/tailwind-indicator.astro';
+import { cn } from '@/lib/utils';
 
 type Props = {
-	title: string;
-	description?: string;
-	bodyClass?: string;
+  title: string;
+  description?: string;
+  bodyClass?: string;
 };
 
 const { title, description, bodyClass } = Astro.props;

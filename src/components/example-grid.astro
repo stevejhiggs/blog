@@ -1,13 +1,12 @@
 ---
-import { Icons } from "@/icons";
-import type { MenuItem } from "@/types";
-
-import { Image } from "astro:assets";
-import { cn } from "@/lib/utils";
+import { Image } from 'astro:assets';
+import { Icons } from '@/icons';
+import { cn } from '@/lib/utils';
+import type { MenuItem } from '@/types';
 
 type Props = {
-	title: string;
-	items: MenuItem[] | undefined;
+  title: string;
+  items: MenuItem[] | undefined;
 };
 
 const { title, items } = Astro.props;
