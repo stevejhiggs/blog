@@ -15,8 +15,8 @@ const { title, description, pubDate, updatedDate, cover, category } = Astro.prop
 
 <MainLayout title={title} description={description}>
   <div class="relative container max-w-(--breakpoint-md) py-10">
-    <button
-      onclick="history.back()"
+    <a
+      href="/blog/"
       class={cn(
         buttonVariants({ variant: "ghost" }),
         "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
@@ -25,7 +25,7 @@ const { title, description, pubDate, updatedDate, cover, category } = Astro.prop
     >
       <Icon name="lucide:chevron-left" class="mr-2 size-4" />
       {" "}Back
-    </button>
+    </a>
 
     <article class="prose dark:prose-invert max-w-none">
       <a
