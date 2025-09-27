@@ -86,6 +86,6 @@ and the shear amount of platform boilerplate that you can just delete to get thi
 There are a few areas that need improving through:
 
 - better sourcemap support
-- an equivilent to [pnpms catalog support](https://github.com/oven-sh/bun/issues/4844) allowing package versions to be kept in line accross all parts of the monorepo
+- ~~an equivilent to [pnpms catalog support](https://github.com/oven-sh/bun/issues/4844) allowing package versions to be kept in line accross all parts of the monorepo~~ - now implemented
 
 Next up **pnpm.....** why do I have the feeling this is not going to be anywhere near as simple?
