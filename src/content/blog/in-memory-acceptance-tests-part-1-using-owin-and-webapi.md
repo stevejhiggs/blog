@@ -1,7 +1,7 @@
 ---
 title: "In memory acceptance tests part 1: using owin and webapi"
 pubDate: "2014-06-01T22:12:03.284Z"
-description: ""
+description: "A practical guide to writing in-memory acceptance tests for .NET applications using OWIN and WebAPI."
 cover: "/images/blog/speed.webp"
 category: "dotnet"
 ---

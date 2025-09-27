@@ -1,7 +1,7 @@
 ---
 title: "Convention based view localisation in mvc4"
 pubDate: "2013-01-01T22:12:03.284Z"
-description: ""
+description: "How to implement convention-based view localisation in ASP.NET MVC4 for multi-language support."
 cover: "/images/blog/earth.webp"
 category: "dotnet"
 ---

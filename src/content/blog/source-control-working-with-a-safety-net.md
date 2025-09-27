@@ -1,7 +1,7 @@
 ---
 title: "Source control: working with a safety net"
 pubDate: "2012-03-09T22:12:03.284Z"
-description: "An overview of source control"
+description: "Best practices for using source control to safeguard your code and workflow."
 cover: "/images/blog/safetynet.webp"
 category: "learning"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Learning python"
 pubDate: "2024-08-11T22:12:03.284Z"
-description: ""
+description: "Reflections and tips on learning Python from a NodeJs developer's perspective."
 cover: "/images/blog/python.webp"
 category: "AI"
 ---

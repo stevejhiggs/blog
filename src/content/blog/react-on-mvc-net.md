@@ -1,7 +1,7 @@
 ---
 title: "React on mvc.net"
 pubDate: "2015-02-21T22:12:03.284Z"
-description: ""
+description: "Integrating React with MVC.NET for modern, interactive web applications."
 cover: "/images/blog/lipstick.webp"
 category: "dotnet"
 ---

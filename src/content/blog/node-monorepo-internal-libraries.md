@@ -1,7 +1,7 @@
 ---
 title: "A backend monorepo - part 1: Bun"
 pubDate: "2024-11-30T10:52:03.284Z"
-description: ""
+description: "Exploring how to structure a TypeScript backend monorepo using Bun, with hot reloading, workspace setup, and source maps."
 cover: "/images/blog/monorepo-flame.webp"
 category: "monorepo"
 ---

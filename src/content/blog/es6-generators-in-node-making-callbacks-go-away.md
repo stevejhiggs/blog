@@ -1,7 +1,7 @@
 ---
 title: "es6 generators in node: making callbacks go away"
 pubDate: "2014-04-21T22:12:03.284Z"
-description: "No one likes the xmas tree of death"
+description: "Using ES6 generators in Node.js to simplify asynchronous code and eliminate callback hell."
 cover: "/images/blog/generator.webp"
 category: "js"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Update to the source control article"
 pubDate: "2012-08-13T22:12:03.284Z"
-description: "TFS bad"
+description: "Additional tips and updates for effective source control usage."
 cover: "/images/blog/poop.webp"
 category: "learning"
 ---

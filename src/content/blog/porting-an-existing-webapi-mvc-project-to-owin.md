@@ -1,7 +1,7 @@
 ---
 title: "Porting an existing webapi/mvc project to owin"
 pubDate: "2014-05-27T22:12:03.284Z"
-description: "Bye bye IIS"
+description: "A step-by-step guide to migrating a WebAPI MVC project to OWIN for improved flexibility and hosting."
 cover: "/images/blog/port.webp"
 category: "dotnet"
 ---

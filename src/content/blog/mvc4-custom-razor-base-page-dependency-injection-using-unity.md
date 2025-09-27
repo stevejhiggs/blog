@@ -1,12 +1,12 @@
 ---
 title: "MVC4 custom razor base page dependency injection using unity"
 pubDate: "2013-02-08T22:12:03.284Z"
-description: ""
+description: "How to implement dependency injection in MVC4 Razor views using Unity for cleaner, testable code."
 cover: "/images/blog/syringe.webp"
 category: "dotnet"
----
 
 This is more to remind myself than anything as the docs for this are somewhat scattered around the web or are needlessly complex now mvc4 has been released.
+---
 
 ## What is it?
 

@@ -1,7 +1,7 @@
 ---
 title: "Why I use ravendb for pretty much all my home .net projects"
 pubDate: "2013-03-08T22:12:03.284Z"
-description: ""
+description: "Reasons for choosing RavenDB as the database for personal .NET projects, with practical examples."
 cover: "/images/blog/raven.webp"
 category: "dotnet"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Questioning the architecture"
 pubDate: "2013-10-08T22:12:03.284Z"
-description: "Maybe we don't need all this stuff?"
+description: "Thoughts on software architecture decisions and how to evaluate them critically."
 cover: "/images/blog/question.webp"
 category: "dotnet"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "An es6 frontend workflow"
 pubDate: "2014-09-14T22:12:03.284Z"
-description: ""
+description: "A guide to building modern JavaScript frontends using ES6, with workflow tips and tooling recommendations."
 cover: "/images/blog/map.webp"
 category: "js"
 ---

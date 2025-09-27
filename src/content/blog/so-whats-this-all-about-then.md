@@ -1,7 +1,7 @@
 ---
 title: So what’s this all about then?
 pubDate: "2012-03-08T22:12:03.284Z"
-description: "An intro to the blog"
+description: "An introduction to the blog and its focus on practical software development topics."
 cover: "/images/blog/programmer.webp"
 category: "Me"
 ---

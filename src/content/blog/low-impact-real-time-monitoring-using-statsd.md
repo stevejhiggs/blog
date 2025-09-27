@@ -1,7 +1,7 @@
 ---
 title: "Low impact real time monitoring using statsd"
 pubDate: "2012-06-15T22:12:03.284Z"
-description: "All the metrics, none of the overhead"
+description: "Implementing real-time monitoring in .NET applications with StatsD for minimal performance impact."
 cover: "/images/blog/watch.webp"
 category: "stats"
 ---

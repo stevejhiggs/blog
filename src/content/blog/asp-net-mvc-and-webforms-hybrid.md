@@ -1,7 +1,7 @@
 ---
 title: "Asp.net Mvc and webforms hybrid"
 pubDate: "2012-03-13T22:12:03.284Z"
-description: "Mixing mvc and winforms"
+description: "Exploring how to combine ASP.NET MVC and WebForms in a single project for flexible web development."
 cover: "/images/blog/hybrid.webp"
 category: "dotnet"
 ---

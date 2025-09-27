@@ -1,7 +1,7 @@
 ---
 title: "Moving this blog to Gatsby"
 pubDate: "2020-10-03T22:12:03.284Z"
-description: ""
+description: "Migrating a personal blog to Gatsby: lessons learned, challenges, and benefits."
 cover: "/images/blog/flapper.webp"
 category: "gatsby"
 ---
