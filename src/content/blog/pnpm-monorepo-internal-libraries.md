@@ -1,5 +1,5 @@
 ---
-title: "A backend monorepo - part 2: Pnpm"
+title: "A backend monorepo with buildless packages: Pnpm"
 pubDate: "2025-09-27T10:52:03.284Z"
 description: "Structuring a TypeScript backend monorepo using pnpm, with workspace setup, hot reloading, and source maps."
 cover: "/images/blog/octopackage.webp"
