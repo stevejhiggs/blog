@@ -26,7 +26,7 @@ You can [see the source code here](https://github.com/stevejhiggs/node-monorepo/
 
 ## tsdown is the solution
 
-In order to fix this we perform a bundle as part of the build process. The problem is that traditionally bundlers have not supported this particular configuration (I want minimal node service) that well. I've tried various tools but always ran into random issues.
+In order to fix this we perform a bundle as part of the build process. The problem is that traditionally bundlers have not supported this particular configuration (I want minimal a node service) that well. I've tried various tools but always ran into random issues.
 
 Trying out the latest version of tsdown all my problems appear to be resolved though with a few small tweaks to the default config:
 
