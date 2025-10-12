@@ -17,8 +17,9 @@ const { title, description, bodyClass } = Astro.props;
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
-    <meta name="google-site-verification" content="QCAY0O5eCJBKbyqrS6rtdGxwvfK94a1lN0BzAQBhCxg" />
     <BaseHead title={title} description={description} />
+    <meta name="google-site-verification" content="QCAY0O5eCJBKbyqrS6rtdGxwvfK94a1lN0BzAQBhCxg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <slot />
