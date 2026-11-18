@@ -12,6 +12,10 @@ export default defineConfig({
   // Compression strips the newline between text and an inline element (e.g. "on\n<a>"),
   // gluing words together; keep source whitespace instead
   compressHTML: false,
+  redirects: {
+    // this post was accidentally published under a "-copy" slug from 2024 to 2026
+    '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects-copy': '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects'
+  },
   integrations: [
     mdx({
       syntaxHighlight: 'shiki',
