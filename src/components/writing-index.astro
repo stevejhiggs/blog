@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostRow from '@/components/post-row.astro';
+import { getCategories } from '@/lib/fetchers';
+import { cn, formatShortDate } from '@/lib/utils';
+
+type Props = {
+  posts: CollectionEntry<'blog'>[];
+  category?: string;
+};
+
+const { posts, category } = Astro.props;
+const categories = await getCategories();
+
+const years: { year: number; posts: CollectionEntry<'blog'>[] }[] = [];
+for (const post of posts) {
+  const year = post.data.pubDate.getFullYear();
+  const group = years.at(-1);
+  if (group?.year === year) group.posts.push(post);
+  else years.push({ year, posts: [post] });
+}
+
+const filters = [{ label: 'All', href: '/blog/', active: !category }].concat(
+  categories.map((item) => ({ label: item, href: `/blog/category/${item}/`, active: item === category }))
+);
+---
+
+<div class="mx-auto max-w-[760px] px-6 pt-14 pb-20 md:pt-20">
+  <h1 class="font-heading text-[clamp(36px,5vw,48px)] leading-tight font-bold tracking-[-0.03em]">Writing</h1>
+
+  <nav aria-label="Filter by topic" class="-ml-2.5 mt-5">
+    <ul class="flex flex-wrap">
+      {
+        filters.map((f) => (
+          <li>
+            <a
+              href={f.href}
+              aria-current={f.active ? 'page' : undefined}
+              class={cn(
+                'inline-flex min-h-11 items-center px-2.5 text-[15px] text-muted-foreground no-underline',
+                f.active && 'font-semibold text-foreground underline decoration-brand decoration-2 underline-offset-[6px]'
+              )}
+            >
+              {f.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
+  {
+    years.map(({ year, posts: yearPosts }) => (
+      <section class="mt-10">
+        <h2 class="text-sm font-semibold text-muted-foreground tabular-nums">{year}</h2>
+        <ul class="mt-2 divide-y border-y">
+          {yearPosts.map((post) => (
+            <PostRow
+              post={post}
+              meta={formatShortDate(post.data.pubDate)}
+            />
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</div>

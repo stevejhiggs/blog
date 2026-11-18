@@ -1,28 +1,26 @@
 ---
-import { type CollectionEntry, getCollection, render } from 'astro:content';
+import { type CollectionEntry, render } from 'astro:content';
 import BlogPostLayout from '@/layouts/blog-post.astro';
+import { getPosts } from '@/lib/fetchers';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
-  return posts.map((post) => ({
+  const posts = await getPosts();
+  return posts.map((post, i) => ({
     params: { slug: post.id },
-    props: post
+    // posts are newest first, so the next entry is the previous post
+    props: { post, previous: posts[i + 1] }
   }));
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = {
+  post: CollectionEntry<'blog'>;
+  previous?: CollectionEntry<'blog'>;
+};
 
-const post = Astro.props;
-const slug = Astro.params.slug;
+const { post, previous } = Astro.props;
 const { Content } = await render(post);
-
-if (!slug || !post) {
-  return new Response(null, {
-    status: 404,
-    statusText: 'Not found'
-  });
-}
 ---
-<BlogPostLayout {...post}>
-	<Content />
+
+<BlogPostLayout post={post} previous={previous}>
+  <Content />
 </BlogPostLayout>

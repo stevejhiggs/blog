@@ -1,68 +1,43 @@
 ---
-import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
-import { Icon } from 'astro-icon/components';
-import { Badge } from '@/components/ui/badge';
-import { buttonVariants } from '@/components/ui/button';
-import { cn, formatDate } from '@/lib/utils';
+import { formatDate } from '@/lib/utils';
 import MainLayout from './main-layout.astro';
 
-type Props = CollectionEntry<'blog'>;
+type Props = {
+  post: CollectionEntry<'blog'>;
+  previous?: CollectionEntry<'blog'>;
+};
 
-const slug = Astro.props.id;
-const { title, description, pubDate, updatedDate, cover, category } = Astro.props.data;
+const { post, previous } = Astro.props;
+const { title, description, pubDate, updatedDate, category } = post.data;
 ---
 
 <MainLayout title={title} description={description}>
-  <div class="relative container max-w-(--breakpoint-md) py-10">
-    <a
-      href="/blog/"
-      class={cn(
-        buttonVariants({ variant: "ghost" }),
-        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
-      )}
-      transition:animate="slide"
-    >
-      <Icon name="lucide:chevron-left" class="mr-2 size-4" />
-      {" "}Back
-    </a>
+  <div class="mx-auto max-w-[760px] px-6 pt-14 pb-20 md:pt-20">
+    <p class="text-sm text-muted-foreground">
+      {formatDate(pubDate)}
+      {updatedDate && <> · updated {formatDate(updatedDate)}</>}
+      {' · '}
+      <a href={`/blog/category/${category}/`} class="no-underline">{category}</a>
+    </p>
+    <h1 class="mt-3 font-heading text-[clamp(30px,4vw,40px)] leading-tight font-bold tracking-[-0.025em]">
+      {title}
+    </h1>
+    {description && <p class="mt-4 text-lg leading-relaxed text-muted-foreground">{description}</p>}
 
-    <article class="prose dark:prose-invert max-w-none">
-      <a
-        href={`/blog/category/${category}`}
-        transition:name={`badge-cat-${slug}`}
-      >
-        <Badge radius="md" className="capitalize">
-          {category}
-        </Badge>
-      </a>
-      <Image
-        class="rounded-xl overflow-hidden my-6"
-        width={720}
-        height={360}
-        src={cover}
-        alt={title}
-        transition:name={`img-${slug}`}
-      />
-      <div class="flex items-center justify-between">
-        <span
-          class="font-medium text-muted-foreground"
-          transition:name={`date-${slug}`}
-        >
-          {formatDate(pubDate)}
-          {
-            updatedDate && (
-              <span>- Last updated on {formatDate(updatedDate)}</span>
-            )
-          }
-        </span>
-      </div>
-      <h1 class="font-heading text-4xl my-4" transition:name={`title-${slug}`}>
-        {title}
-      </h1>
-      <p>{description}</p>
-      <hr class="my-6" />
+    <article
+      class="prose mt-10 max-w-none md:prose-lg prose-headings:font-heading prose-headings:font-bold prose-headings:tracking-[-0.02em] prose-a:decoration-brand prose-a:decoration-2 prose-a:underline-offset-[3px] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-lg prose-pre:font-mono prose-pre:text-sm"
+    >
       <slot />
     </article>
+
+    {
+      previous && (
+        <a href={`/blog/${previous.id}/`} class="mt-16 block border-t pt-5 no-underline">
+          <span class="block text-sm text-muted-foreground">Previous</span>
+          <span class="mt-1 block font-heading text-lg leading-snug font-semibold">{previous.data.title}</span>
+        </a>
+      )
+    }
   </div>
 </MainLayout>

@@ -2,34 +2,29 @@
 import { siteConfig } from '@/config/site';
 import { cn } from '@/lib/utils';
 
-type Props = {
-  className?: string;
-};
-
-const { className } = Astro.props;
+const onWriting = Astro.url.pathname.startsWith('/blog');
+const linkClass = 'block px-3.5 py-3 no-underline';
 ---
 
-<header
-  class={cn(
-    "flex items-center h-16 md:h-18 z-50 sticky top-0 bg-background",
-    className
-  )}
->
-  <div class="relative container flex items-center justify-between w-full">
-    <div class="flex items-center gap-6 md:gap-8 lg:gap-10">
-      <a href="/" class="hidden items-center space-x-2 md:flex">
-        <span class="hidden font-bold sm:inline-block">
-          {siteConfig.name}
-        </span>
-      </a>
-
-      <slot name="mobile-nav-header" />
-
-      <div class="hidden md:flex">
-        <slot name="left-header" />
-      </div>
-    </div>
-
-    <slot name="right-header" />
+<header class="border-b">
+  <div class="mx-auto flex max-w-[760px] flex-wrap items-center justify-between gap-x-6 px-6 py-2">
+    <a href="/" class="py-3 font-mono font-medium no-underline">
+      shiggs<span class="text-brand">AtWork</span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="-mr-3.5 flex flex-wrap gap-1 text-[15px] font-medium">
+        <li>
+          <a
+            href="/blog/"
+            aria-current={onWriting ? 'page' : undefined}
+            class={cn(linkClass, onWriting && 'underline decoration-brand decoration-2 underline-offset-[6px]')}
+          >
+            Writing
+          </a>
+        </li>
+        <li><a href={siteConfig.links.github} class={linkClass}>GitHub</a></li>
+        <li><a href="/rss.xml" class={linkClass}>RSS</a></li>
+      </ul>
+    </nav>
   </div>
 </header>

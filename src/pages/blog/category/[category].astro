@@ -1,38 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
-import BlogHeader from '@/components/blog-header.astro';
-import BlogCard from '@/components/cards/blog-card.astro';
+import WritingIndex from '@/components/writing-index.astro';
 import MainLayout from '@/layouts/main-layout.astro';
-import { capitalizer } from '@/lib/utils';
+import { getCategories, getPostsByCategory } from '@/lib/fetchers';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
-  const uniqueCategories = [...new Set(allPosts.flatMap((post) => post.data.category))];
-
-  return uniqueCategories.map((category) => {
-    const filteredPosts = allPosts.filter((post) => post.data.category.includes(category)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-    return {
-      params: { category },
-      props: { posts: filteredPosts }
-    };
-  });
+  const categories = await getCategories();
+  return categories.map((category) => ({ params: { category } }));
 }
 
 const { category } = Astro.params;
-const { posts } = Astro.props;
+const posts = await getPostsByCategory(category);
 ---
 
-<MainLayout
-  title={`${capitalizer(category)} | Blog`}
-  description={`All posts for ${category} category`}
->
-  <section class="container py-10">
-    <BlogHeader title={`Posts by ${category} category`} />
-
-    <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-9 md:gap-y-16 lg:gap-x-8"
-    >
-      {posts.map((post) => <BlogCard {...post} />)}
-    </div>
-  </section>
+<MainLayout title={`${category} | Writing`} description={`Posts about ${category}`}>
+  <WritingIndex posts={posts} category={category} />
 </MainLayout>

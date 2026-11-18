@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  post: CollectionEntry<'blog'>;
+  meta: string;
+};
+
+const { post, meta } = Astro.props;
+---
+
+<li>
+  <a href={`/blog/${post.id}/`} class="group grid grid-cols-[1fr_auto] items-baseline gap-x-6 py-4 no-underline">
+    <span
+      class="font-heading text-lg leading-snug font-semibold tracking-[-0.01em] transition-colors group-hover:text-brand"
+    >
+      {post.data.title}
+    </span>
+    <span class="text-sm whitespace-nowrap text-muted-foreground tabular-nums">{meta}</span>
+    {
+      post.data.description && (
+        <span class="col-span-2 mt-1 max-w-[60ch] text-[15px] leading-relaxed text-muted-foreground sm:col-span-1">
+          {post.data.description}
+        </span>
+      )
+    }
+  </a>
+</li>

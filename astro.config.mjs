@@ -9,6 +9,9 @@ import icon from 'astro-icon';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.shiggsatwork.co.uk',
+  // Compression strips the newline between text and an inline element (e.g. "on\n<a>"),
+  // gluing words together; keep source whitespace instead
+  compressHTML: false,
   integrations: [
     mdx({
       syntaxHighlight: 'shiki',

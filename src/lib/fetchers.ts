@@ -1,7 +1,8 @@
 import { getCollection } from 'astro:content';
 
+// Ordered by each topic's most recent post
 export async function getCategories() {
-  const posts = await getCollection('blog');
+  const posts = await getPosts();
   const categories = [...new Set(posts.flatMap((post) => post.data.category))];
 
   return categories;

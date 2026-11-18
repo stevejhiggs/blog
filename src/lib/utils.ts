@@ -11,7 +11,11 @@ export function wait(ms: number) {
 }
 
 export function formatDate(date: Date) {
-  return format(date, 'LLL dd, y');
+  return format(date, 'dd LLL y');
+}
+
+export function formatShortDate(date: Date) {
+  return format(date, 'dd LLL');
 }
 
 export function extractSegmentURL(path: string) {
