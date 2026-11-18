@@ -25,5 +25,8 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   output: 'static',
-  adapter: netlify()
+  adapter: netlify({
+    // Edge function emulation breaks with newer Deno and the site has no edge functions
+    devFeatures: { environmentVariables: false, images: true, edgeFunctions: false }
+  })
 });

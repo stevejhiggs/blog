@@ -9,7 +9,7 @@ import MainLayout from './main-layout.astro';
 
 type Props = CollectionEntry<'blog'>;
 
-const slug = Astro.props.slug;
+const slug = Astro.props.id;
 const { title, description, pubDate, updatedDate, cover, category } = Astro.props.data;
 ---
 
