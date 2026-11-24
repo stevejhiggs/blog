@@ -14,7 +14,9 @@ export default defineConfig({
   compressHTML: false,
   redirects: {
     // this post was accidentally published under a "-copy" slug from 2024 to 2026
-    '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects-copy': '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects'
+    '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects-copy': '/blog/why-i-use-ravendb-for-pretty-much-all-my-home-net-projects',
+    // old pre-/blog/ URL for this post
+    '/moving-to-gatsby': '/blog/moving-to-gatsby'
   },
   integrations: [
     mdx({
