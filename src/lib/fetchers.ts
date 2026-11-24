@@ -1,5 +1,15 @@
 import { getCollection } from 'astro:content';
 
+// Category URLs are lowercase: Netlify 301s mixed-case paths to lowercase,
+// so a mixed-case URL would make the canonical link point at a redirect
+export function categorySlug(category: string) {
+  return category.toLowerCase();
+}
+
+export function categoryHref(category: string) {
+  return `/blog/category/${categorySlug(category)}/`;
+}
+
 // Ordered by each topic's most recent post
 export async function getCategories() {
   const posts = await getPosts();

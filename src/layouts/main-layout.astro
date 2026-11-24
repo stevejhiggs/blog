@@ -5,14 +5,17 @@ import BaseLayout from './base-layout.astro';
 
 type Props = {
   title: string;
+  seoTitle?: string;
   description?: string;
   mainClass?: string;
+  ogType?: 'website' | 'article';
 };
 
-const { title, description, mainClass } = Astro.props;
+const { title, seoTitle, description, mainClass, ogType } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} seoTitle={seoTitle} description={description} ogType={ogType}>
+  <slot name="head" slot="head" />
   <Header />
 
   <main class={cn('flex-1', mainClass)}>

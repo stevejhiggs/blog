@@ -1,5 +1,6 @@
 ---
 title: ".net vNext : that's some nice tools you've got there, we'll have them"
+seoTitle: ".net vNext: nice tools you've got there, we'll have them"
 pubDate: "2014-05-30T22:12:03.284Z"
 description: "A look at new tools and features in .NET vNext and how they improve developer productivity."
 cover: "/images/blog/thief.webp"

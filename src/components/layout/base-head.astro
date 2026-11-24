@@ -5,13 +5,22 @@ import { ClientRouter } from 'astro:transitions';
 
 interface Props {
   title: string;
+  // overrides the <title> text when the visible title is too long for search results
+  seoTitle?: string;
   description?: string;
   image?: string;
+  ogType?: 'website' | 'article';
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description = siteConfig.description, image = '/og.jpg' } = Astro.props;
+const { title, seoTitle, description = siteConfig.description, image = '/og.jpg', ogType = 'website' } = Astro.props;
+
+// Keep <title> within ~60 characters so search results don't truncate it:
+// the site name suffix is dropped when it would push the title over
+const siteSuffix = ` | ${siteConfig.name}`;
+const pageTitle = seoTitle ?? title;
+const documentTitle = !pageTitle ? siteConfig.name : pageTitle.length + siteSuffix.length <= 60 ? `${pageTitle}${siteSuffix}` : pageTitle;
 ---
 
 <!-- Global Metadata -->
@@ -24,12 +33,12 @@ const { title, description = siteConfig.description, image = '/og.jpg' } = Astro
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Primary Meta Tags -->
-<title>{title ? `${title} | shiggsAtWork` : "shiggsAtWork"}</title>
-<meta name="title" content={title ? `${title} | shiggsAtWork` : "shiggsAtWork"} />
+<title>{documentTitle}</title>
+<meta name="title" content={documentTitle} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<meta property="og:type" content={ogType} />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />

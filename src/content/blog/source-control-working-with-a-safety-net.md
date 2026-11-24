@@ -15,7 +15,7 @@ Trying to pick out which one is the latest copy is a nightmare. This structure i
 
 Today we are going to go over how to sort this mess out and how to keep things simple and organized.
 
-# The basics of source control
+## The basics of source control
 
 Source control is at its core a way of storing versions of files.
 
@@ -34,7 +34,7 @@ This may seem like extra work for little gain but by carrying this process out w
 - Easily pull copies of the development tree onto other machines.
 - Merge changes easily between different versions of the development tree (e.g port changes from unstable to stable)
 
-# Types of source control
+## Types of source control
 
 ### Check-out and check-in
 
@@ -74,7 +74,7 @@ DVCS build upon the local merging model. They allow a user to commit to a local 
 - Bob checks in file A locally
 - Bob connects to the central server and pushes the changes from his local repository to the central repository.
 
-# Overviews of different source control solutions
+## Overviews of different source control solutions
 
 ### Visual sourcesafe (VSS)
 
@@ -124,7 +124,7 @@ TFS was created by Microsoft as a replacement for Sourcesafe. It fixes some of t
 
 It's slowly replacing sourcesafe in some companies which is definitely a good thing and the other tools it supplies are nice but it still fails pretty hard when compared with other source control solutions.
 
-#### Subversion (SVN)
+### Subversion (SVN)
 
 One of the most common source control systems around and for good reason.
 
@@ -201,12 +201,12 @@ I used perforce for 3 years and I was constantly amazed at how robust it was, re
 
 Highly recommended but it can work out to be very expensive.
 
-# We keep all our files on a shared drive and the developers can all access them from there
+## We keep all our files on a shared drive and the developers can all access them from there
 
 I have heard the above quote far too many times to be comfortable. This is normally a good sign that the company you are talking to has no real idea about the processes of development and that no-one in that companies development team has put in any effort to get this changed. This model is most common with scripted languages (PHP, ASP etc) and is probably most prevalent in web development houses. By working with this model you can easily overwrite each others changes and you don't know what state each file is in. In fact I
 shouldn't even have to explain this to you, you know very well the issues with this model because you live with them every day. Lets look at a simple alternative.
 
-# Setting up source control for a web development house.
+## Setting up source control for a web development house.
 
 Here's the situation:
 
@@ -310,6 +310,6 @@ This gives us a pretty good workflow. All the designers need to remember is to r
 
 In the above environment you can't really have a central dev server (well, you can but it's a bit beyond the scope of this post). Everyone should be working and testing on their local machine. Pulling and pushing from the remote server. This also provides a great deal of fault tolerance if something goes wrong as well as being generally faster.
 
-# Moaning designers
+## Moaning designers
 
 Your people who are not used to source control will still moan that it "takes ages". Usually up until the first time it saves their arse. It doesn't take too long for a "bob has deleted this by accident" moment to occur and the ability to just recover the latest version from the server rapidly gives people an education.

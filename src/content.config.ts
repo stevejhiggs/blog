@@ -8,7 +8,10 @@ const blog = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      description: z.string(),
+      // shorter <title> for search results when the post title is long
+      seoTitle: z.string().optional(),
+      // used as the meta description, so it must not be empty
+      description: z.string().min(1),
       cover: z.string(),
       category: z.string(),
       // Transform string to Date object

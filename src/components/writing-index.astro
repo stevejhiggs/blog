@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import PostRow from '@/components/post-row.astro';
-import { getCategories } from '@/lib/fetchers';
+import { categoryHref, getCategories } from '@/lib/fetchers';
 import { cn, formatShortDate } from '@/lib/utils';
 
 type Props = {
@@ -21,7 +21,7 @@ for (const post of posts) {
 }
 
 const filters = [{ label: 'All', href: '/blog/', active: !category }].concat(
-  categories.map((item) => ({ label: item, href: `/blog/category/${item}/`, active: item === category }))
+  categories.map((item) => ({ label: item, href: categoryHref(item), active: item === category }))
 );
 ---
 

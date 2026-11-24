@@ -1,17 +1,18 @@
 ---
+import { categoryDescription } from '@/config/categories';
 import WritingIndex from '@/components/writing-index.astro';
 import MainLayout from '@/layouts/main-layout.astro';
-import { getCategories, getPostsByCategory } from '@/lib/fetchers';
+import { categorySlug, getCategories, getPostsByCategory } from '@/lib/fetchers';
 
 export async function getStaticPaths() {
   const categories = await getCategories();
-  return categories.map((category) => ({ params: { category } }));
+  return categories.map((category) => ({ params: { category: categorySlug(category) }, props: { category } }));
 }
 
-const { category } = Astro.params;
+const { category } = Astro.props;
 const posts = await getPostsByCategory(category);
 ---
 
-<MainLayout title={`${category} | Writing`} description={`Posts about ${category}`}>
+<MainLayout title={`${category} | Writing`} description={categoryDescription(category)}>
   <WritingIndex posts={posts} category={category} />
 </MainLayout>

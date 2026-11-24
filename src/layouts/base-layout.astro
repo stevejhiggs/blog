@@ -7,19 +7,22 @@ import { cn } from '@/lib/utils';
 
 type Props = {
   title: string;
+  seoTitle?: string;
   description?: string;
   bodyClass?: string;
+  ogType?: 'website' | 'article';
 };
 
-const { title, description, bodyClass } = Astro.props;
+const { title, seoTitle, description, bodyClass, ogType } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta name="google-site-verification" content="QCAY0O5eCJBKbyqrS6rtdGxwvfK94a1lN0BzAQBhCxg" />
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} seoTitle={seoTitle} description={description} ogType={ogType} />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <slot name="head" />
   </head>
   <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <slot />
